@@ -5,7 +5,9 @@
 
 Sashakt is an online job portal for rural women that connects them easily with the employers looking for talented and skilled women, accompanied by a number of features to ease the process for rural women and the employers.
 
-The platform is avalible with multiple language support which eleminates all the entry barriers for rural women seeking for jobs.
+The platform is available with multiple language support which eleminates all the entry barriers for rural women seeking for jobs.
+
+> See the hosted website [Here](https://sashakt.netlify.app/)
 
 ## Key Features:
 - Professional profiles for the users as well as organisations.
@@ -26,7 +28,12 @@ The platform is avalible with multiple language support which eleminates all the
 - **Database**: Sqllite3
 - **Hosting**: Heroku, Netlify
 
-#### Setup
+## Links:
+- **Frontend**: [https://sashakt.netlify.app/](https://sashakt.netlify.app/)
+- **Backend**: [https://sashakt.herokuapp.com/](https://sashakt.herokuapp.com/)
+- **PPT**: [http://bit.ly/sashakt2020](http://bit.ly/sashakt2020)
+
+## Setup
 
 
 <details>
