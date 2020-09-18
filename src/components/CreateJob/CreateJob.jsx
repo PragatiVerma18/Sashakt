@@ -40,7 +40,7 @@ function CreateJob({ user }) {
     age_limit: '',
     qualification: 'Intermediate (10+2)',
     experience: '',
-    job_for_women: true,
+    job_for_women: false,
     job_for_disabled: false,
   });
 
@@ -239,11 +239,20 @@ function CreateJob({ user }) {
               <label className='cursor-pointer flex text-gray-500 font-bold'>
                 <input
                   type='checkbox'
+                  name='job_for_women'
+                  onChange={handleCheckboxChange}
+                  style={{ width: 'fit-content', cursor: 'pointer' }}
+                />
+                <span>Paid maternity leave</span>
+              </label>
+              <label className='cursor-pointer flex text-gray-500 font-bold'>
+                <input
+                  type='checkbox'
                   name='job_for_disabled'
                   onChange={handleCheckboxChange}
                   style={{ width: 'fit-content', cursor: 'pointer' }}
                 />
-                <span>Jobs for Disabled people</span>
+                <span>Period leave</span>
               </label>
             </div>
             <div className='mt-2'>

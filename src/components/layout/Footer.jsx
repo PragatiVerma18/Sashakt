@@ -11,9 +11,11 @@ const Footer = () => {
       <div className='main-footer'>
         <div className='my-2'>
           <div className='flex mb-1'>
-            <p className='text-white text-center font-bold text-xl'>
-              Connect with us
-            </p>
+            <img
+              src={require('assets/awsar.png')}
+              className='px-2 h-10'
+              alt='Awsar Logo'
+            />
           </div>
           <div className='flex'>
             <Link to='/'>

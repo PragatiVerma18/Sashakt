@@ -164,12 +164,12 @@ function OrgDashboard({ user }) {
                     {job.job_for_women || job.job_for_disabled ? (
                       <div className='mt-1'>
                         {job.job_for_women && (
-                          <button className='women-job'>Jobs for Women</button>
+                          <button className='women-job'>
+                            Paid Maternity Leave
+                          </button>
                         )}
                         {job.job_for_disabled && (
-                          <button className='disabled-job'>
-                            Jobs for Disabled
-                          </button>
+                          <button className='disabled-job'>Period Leave</button>
                         )}
                       </div>
                     ) : (

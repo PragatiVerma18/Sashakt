@@ -193,7 +193,7 @@ function Jobs({ user }) {
                   name='job_for_women'
                   onChange={handleCheckboxChange}
                 />
-                <span className='ml-1 text-sm'>Jobs for Women</span>
+                <span className='ml-1 text-sm'>Paid Maternity Leave</span>
               </label>
               <label className='block cursor-pointer'>
                 <input
@@ -202,7 +202,7 @@ function Jobs({ user }) {
                   name='job_for_disabled'
                   onChange={handleCheckboxChange}
                 />
-                <span className='ml-1 text-sm'>Jobs for Disabled</span>
+                <span className='ml-1 text-sm'>Period Leave</span>
               </label>
               <label className='block cursor-pointer'>
                 <input

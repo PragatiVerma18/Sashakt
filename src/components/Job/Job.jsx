@@ -61,12 +61,12 @@ function Job({ user }) {
             <p>
               {job.job_for_women && (
                 <button className='mr-2 mt-2 rounded-sm text-white px-2 text-pink-600 border border-pink-600'>
-                  Jobs for Women
+                  Paid Maternity Leave
                 </button>
               )}
               {job.job_for_disabled && (
                 <button className='mt-2 rounded-sm text-white px-2 text-green-600 border border-green-600'>
-                  Jobs for Disabled
+                  Period Leave
                 </button>
               )}
             </p>
