@@ -41,77 +41,81 @@ function OrgDashboard({ user }) {
     fetchJobs();
   }, [fetchJobs]);
 
-  if (!localStorage.getItem('token')) return <Redirect to="/login" />;
+  if (!localStorage.getItem('token')) return <Redirect to='/login' />;
 
   if (loading || !user.username)
     return (
-      <img className="loader" alt="loader" src={require('assets/loader.gif')} />
+      <img className='loader' alt='loader' src={require('assets/loader.gif')} />
     );
 
   return (
-    <StyledContainer className="p-6">
+    <StyledContainer className='p-6'>
       {modal && (
-        <Modal modal={modal} title="Delete Job" closeModal={hideModal}>
-          <h1 className="mb-2 text-xl">
+        <Modal modal={modal} title='Delete Job' closeModal={hideModal}>
+          <h1 className='mb-2 text-xl'>
             Do you want to permanently delete this Job?
           </h1>
-          <div className="flex">
-            <button className="mr-4" onClick={hideModal}>
+          <div className='flex'>
+            <button className='mr-4' onClick={hideModal}>
               Cancel
             </button>
             <button
               style={{ backgroundColor: '#d52b1bed' }}
               onClick={handleDeleteJob}
-              disabled={pending}>
+              disabled={pending}
+            >
               {pending ? 'Deleting Job...' : 'Delete Job'}
             </button>
           </div>
         </Modal>
       )}
-      <div className="flex flex-col sm:flex-row">
-        <div className="relative w-full sm:1/2 md:w-1/4">
-          <div className="flex text-xl justify-center items-center text-gray-800 flex-col font-bold bg-white my-2 mx-4 sm:mx-2 p-6 shadow rounded">
+      <div className='flex flex-col sm:flex-row'>
+        <div className='relative w-full sm:1/2 md:w-1/4'>
+          <div className='flex text-xl justify-center items-center text-gray-800 flex-col font-bold bg-white my-2 mx-4 sm:mx-2 p-6 shadow rounded'>
             {jobs.length ? (
               jobs[0].user.verified ? (
                 <>
-                  <Icon name="verified" />
+                  <Icon name='verified' />
                   <p>Verified Account</p>
                 </>
               ) : (
                 <>
-                  <Icon name="unverified" />
-                  <a className="text-blue-600" href="mailto:support@awsar.com">
-                    <p title="Verify me">Unverified</p>
+                  <Icon name='unverified' />
+                  <a
+                    className='text-purple-800'
+                    href='mailto:support@awsar.com'
+                  >
+                    <p title='Verify me'>Unverified</p>
                   </a>
                 </>
               )
             ) : (
               <>
-                <Icon name="unverified" />
-                <a className="text-blue-600" href="mailto:support@awsar.com">
-                  <p title="Verify me">Unverified</p>
+                <Icon name='unverified' />
+                <a className='text-purple-800' href='mailto:support@awsar.com'>
+                  <p title='Verify me'>Unverified</p>
                 </a>
               </>
             )}
           </div>
         </div>
-        <div className="relative w-full sm:1/2 md:w-1/4">
-          <div className="flex text-xl justify-center items-center text-gray-800 flex-col font-bold bg-white my-2 mx-4 sm:mx-2 p-6 shadow rounded">
-            <Icon name="job" />
+        <div className='relative w-full sm:1/2 md:w-1/4'>
+          <div className='flex text-xl justify-center items-center text-gray-800 flex-col font-bold bg-white my-2 mx-4 sm:mx-2 p-6 shadow rounded'>
+            <Icon name='job' />
             <p>
               {jobs.length} {jobs.length === 1 ? 'Job' : 'Jobs'} Created
             </p>
           </div>
         </div>
-        <div className="relative w-full sm:1/2 md:w-1/4">
-          <div className="flex text-xl justify-center items-center text-gray-800 flex-col font-bold bg-white my-2 mx-4 sm:mx-2 p-6 shadow rounded">
-            <Icon name="people" />
+        <div className='relative w-full sm:1/2 md:w-1/4'>
+          <div className='flex text-xl justify-center items-center text-gray-800 flex-col font-bold bg-white my-2 mx-4 sm:mx-2 p-6 shadow rounded'>
+            <Icon name='people' />
             <p>121 Applicants</p>
           </div>
         </div>
-        <div className="relative w-full sm:1/2 md:w-1/4">
-          <div className="flex text-xl justify-center items-center text-gray-800 flex-col font-bold bg-white my-2 mx-4 sm:mx-2 p-6 shadow rounded">
-            <Icon name="categories" />
+        <div className='relative w-full sm:1/2 md:w-1/4'>
+          <div className='flex text-xl justify-center items-center text-gray-800 flex-col font-bold bg-white my-2 mx-4 sm:mx-2 p-6 shadow rounded'>
+            <Icon name='categories' />
             <p>
               {categories.length}{' '}
               {categories.length === 1 ? 'Category' : 'Categories'} Covered
@@ -120,8 +124,8 @@ function OrgDashboard({ user }) {
         </div>
       </div>
 
-      <h1 className="mt-2 text-xl text-blue-600 text-center">
-        Jobs by <span className="uppercase">{user.username}</span>
+      <h1 className='mt-2 text-xl text-purple-800 text-center'>
+        Jobs by <span className='uppercase'>{user.username}</span>
       </h1>
       {jobs.length ? (
         <div>
@@ -131,64 +135,69 @@ function OrgDashboard({ user }) {
             .map((job) => (
               <div
                 key={job.id}
-                className="relative w-full sm:inline-block sm:w-1/2 md:w-1/4 ">
-                <div className="text-gray-800 bg-white mx-4 my-2 sm:m-2 p-6 shadow rounded">
+                className='relative w-full sm:inline-block sm:w-1/2 md:w-1/4 '
+              >
+                <div className='text-gray-800 bg-white mx-4 my-2 sm:m-2 p-6 shadow rounded'>
                   <Link
                     to={`job/${job.id}`}
-                    className="hover:underline flex justify-center text-lg font-bold text-center text-blue-600">
+                    className='hover:underline flex justify-center text-lg font-bold text-center text-purple-800'
+                  >
                     {job.title}
                   </Link>
-                  <div className="mt-1 text-sm">
+                  <div className='mt-1 text-sm'>
                     <p>
-                      <span className="font-bold">Number of Applicants: </span>
+                      <span className='font-bold'>Number of Applicants: </span>
                       {110}
                     </p>
                     <p>
-                      <span className="font-bold">Vacancies: </span>
+                      <span className='font-bold'>Vacancies: </span>
                       {job.vacancies}
                     </p>
                     <p>
-                      <span className="font-bold">Location: </span>
+                      <span className='font-bold'>Location: </span>
                       {job.location}
                     </p>
                     <p>
-                      <span className="font-bold">Salary: </span>
+                      <span className='font-bold'>Salary: </span>
                       {job.salary} (₹) (per month)
                     </p>
                     {job.job_for_women || job.job_for_disabled ? (
-                      <div className="mt-1">
+                      <div className='mt-1'>
                         {job.job_for_women && (
-                          <button className="women-job">Jobs for Women</button>
+                          <button className='women-job'>Jobs for Women</button>
                         )}
                         {job.job_for_disabled && (
-                          <button className="disabled-job">
+                          <button className='disabled-job'>
                             Jobs for Disabled
                           </button>
                         )}
                       </div>
                     ) : (
-                      <button className="general">General</button>
+                      <button className='general'>General</button>
                     )}
                     <div style={{ position: 'absolute', top: 18, right: 18 }}>
                       <Link
                         to={`/updateJob/${job.id}`}
-                        title="Edit Job"
-                        className="transition ease-in duration-100 bg-gray-700 hover:bg-gray-900 rounded-full h-8 w-8 flex items-center justify-center">
-                        <Icon name="edit" />
+                        title='Edit Job'
+                        className='transition ease-in duration-100 bg-gray-700 hover:bg-gray-900 rounded-full h-8 w-8 flex items-center justify-center'
+                      >
+                        <Icon name='edit' />
                       </Link>
                       <span
-                        title="Delete Job"
-                        className="cursor-pointer mt-2 transition ease-in duration-100 bg-gray-700 hover:bg-gray-900 rounded-full h-8 w-8 flex items-center justify-center"
+                        title='Delete Job'
+                        className='cursor-pointer mt-2 transition ease-in duration-100 bg-gray-700 hover:bg-gray-900 rounded-full h-8 w-8 flex items-center justify-center'
                         onClick={() => {
                           showModal();
                           setJobId(job.id);
-                        }}>
-                        <Icon name="delete" />
+                        }}
+                      >
+                        <Icon name='delete' />
                       </span>
                     </div>
                     <Link
                       to={`job/applicants/${job.id}`}
-                      className="block transition duration-150 ease-in-out rounded mt-1 py-1 px-2 border border-blue-600 text-center bg-blue-600 text-white hover:bg-white hover:text-blue-600">
+                      className='block transition duration-150 ease-in-out rounded mt-1 py-1 px-2 border border-purple-800 text-center bg-purple-800 text-white hover:bg-white hover:text-purple-800'
+                    >
                       See Job Applications
                     </Link>
                   </div>
@@ -197,11 +206,11 @@ function OrgDashboard({ user }) {
             ))}
         </div>
       ) : (
-        <div className="text-xl font-medium text-center">
+        <div className='text-xl font-medium text-center'>
           <p>No Jobs found!</p>
           <p>
             Click{' '}
-            <Link to="/createJob" className="text-blue-600 hover:underline">
+            <Link to='/createJob' className='text-purple-800 hover:underline'>
               here
             </Link>{' '}
             to create a Job

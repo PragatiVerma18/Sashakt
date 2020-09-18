@@ -67,7 +67,7 @@ export const StyledForm = styled.main.attrs({
       }
     }
     h1 {
-      ${tw`text-3xl font-bold text-center m-2 text-blue-700`}
+      ${tw`text-3xl font-bold text-center m-2 text-purple-900`}
     }
     form {
       ${tw`flex flex-col justify-center`}
@@ -83,12 +83,12 @@ export const StyledForm = styled.main.attrs({
       ${tw`block bg-white focus:outline-none focus:shadow-outline m-1 border border-gray-300 rounded py-2 px-4 leading-tight border-gray-400`}
     }
     button {
-      ${tw`my-2 mx-1 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded transition ease-in duration-200`}
+      ${tw`my-2 mx-1 bg-purple-800 hover:bg-purple-900 text-white font-bold py-2 px-2 rounded transition ease-in duration-200`}
       &:disabled {
-        ${tw`hover:bg-blue-500 opacity-50 cursor-not-allowed`}
+        ${tw`hover:bg-purple-800 opacity-50 cursor-not-allowed`}
       }
       &.selected {
-        ${tw`bg-white text-blue-500 border border-blue-500`}
+        ${tw`bg-white text-purple-800 border border-purple-800`}
       }
     }
     p {

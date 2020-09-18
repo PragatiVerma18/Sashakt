@@ -43,11 +43,11 @@ function Jobs({ user }) {
       allJobs = allJobs.filter((j) => j.company_name.toUpperCase() === org);
     if (lastDate !== 'select an option')
       allJobs = allJobs.filter(
-        (j) => j.last_date.substring(0, 10) === lastDate,
+        (j) => j.last_date.substring(0, 10) === lastDate
       );
     if (qual !== 'select an option')
       allJobs = allJobs.filter(
-        (j) => j.qualification.toUpperCase() === qual.toUpperCase(),
+        (j) => j.qualification.toUpperCase() === qual.toUpperCase()
       );
     if (womenJobs)
       allJobs = allJobs.filter((j) => j.job_for_women === womenJobs);
@@ -99,24 +99,24 @@ function Jobs({ user }) {
     getJobs();
   }, [getJobs]);
 
-  if (!localStorage.getItem('token')) return <Redirect to="/login" />;
+  if (!localStorage.getItem('token')) return <Redirect to='/login' />;
 
   if (loading)
     return (
-      <img className="loader" alt="loader" src={require('assets/loader.gif')} />
+      <img className='loader' alt='loader' src={require('assets/loader.gif')} />
     );
 
   return (
     <StyledContainer>
-      <div className="cards-grid">
-        <div className="left-card">
-          <div className="grid-card">
-            <p className="text-center text-lg text-blue-600 font-bold">
+      <div className='cards-grid'>
+        <div className='left-card'>
+          <div className='grid-card'>
+            <p className='text-center text-lg text-purple-800 font-bold'>
               Filter Jobs
             </p>
-            <div className="mt-3">
-              <p className="font-bold text-sm">Category:</p>
-              <select value={category} name="category" onChange={handleChange}>
+            <div className='mt-3'>
+              <p className='font-bold text-sm'>Category:</p>
+              <select value={category} name='category' onChange={handleChange}>
                 <option disabled selected>
                   select an option
                 </option>
@@ -125,9 +125,9 @@ function Jobs({ user }) {
                 ))}
               </select>
             </div>
-            <div className="mt-3">
-              <p className="font-bold text-sm">Job Type:</p>
-              <select value={type} name="type" onChange={handleChange}>
+            <div className='mt-3'>
+              <p className='font-bold text-sm'>Job Type:</p>
+              <select value={type} name='type' onChange={handleChange}>
                 <option disabled selected>
                   select an option
                 </option>
@@ -136,9 +136,9 @@ function Jobs({ user }) {
                 <option>Internship</option>
               </select>
             </div>
-            <div className="mt-3">
-              <p className="font-bold text-sm">Location:</p>
-              <select value={location} name="location" onChange={handleChange}>
+            <div className='mt-3'>
+              <p className='font-bold text-sm'>Location:</p>
+              <select value={location} name='location' onChange={handleChange}>
                 <option disabled selected>
                   select an option
                 </option>
@@ -147,35 +147,35 @@ function Jobs({ user }) {
                 ))}
               </select>
             </div>
-            <div className="mt-3">
-              <p className="font-bold text-sm">Organization:</p>
-              <select value={org} name="org" onChange={handleChange}>
+            <div className='mt-3'>
+              <p className='font-bold text-sm'>Organization:</p>
+              <select value={org} name='org' onChange={handleChange}>
                 <option disabled selected>
                   select an option
                 </option>
                 {removeDuplicate(jobs.map((job) => job.company_name)).map(
                   (l) => (
                     <option key={l}>{l.toUpperCase()}</option>
-                  ),
+                  )
                 )}
               </select>
             </div>
-            <div className="mt-3">
-              <p className="font-bold text-sm">Last date to apply:</p>
-              <select value={lastDate} name="lastDate" onChange={handleChange}>
+            <div className='mt-3'>
+              <p className='font-bold text-sm'>Last date to apply:</p>
+              <select value={lastDate} name='lastDate' onChange={handleChange}>
                 <option disabled selected>
                   select an option
                 </option>
                 {removeDuplicate(
-                  jobs.map((job) => job.last_date.substring(0, 10)),
+                  jobs.map((job) => job.last_date.substring(0, 10))
                 ).map((l) => (
                   <option key={l}>{l}</option>
                 ))}
               </select>
             </div>
-            <div className="mt-3">
-              <p className="font-bold text-sm">Qualification:</p>
-              <select value={qual} name="qual" onChange={handleChange}>
+            <div className='mt-3'>
+              <p className='font-bold text-sm'>Qualification:</p>
+              <select value={qual} name='qual' onChange={handleChange}>
                 <option disabled selected>
                   select an option
                 </option>
@@ -184,47 +184,47 @@ function Jobs({ user }) {
                 ))}
               </select>
             </div>
-            <div className="mt-3">
-              <p className="font-bold text-sm">Special Categories:</p>
-              <label className="block cursor-pointer">
+            <div className='mt-3'>
+              <p className='font-bold text-sm'>Special Categories:</p>
+              <label className='block cursor-pointer'>
                 <input
-                  type="checkbox"
+                  type='checkbox'
                   checked={womenJobs}
-                  name="job_for_women"
+                  name='job_for_women'
                   onChange={handleCheckboxChange}
                 />
-                <span className="ml-1 text-sm">Jobs for Women</span>
+                <span className='ml-1 text-sm'>Jobs for Women</span>
               </label>
-              <label className="block cursor-pointer">
+              <label className='block cursor-pointer'>
                 <input
-                  type="checkbox"
+                  type='checkbox'
                   checked={disabledJobs}
-                  name="job_for_disabled"
+                  name='job_for_disabled'
                   onChange={handleCheckboxChange}
                 />
-                <span className="ml-1 text-sm">Jobs for Disabled</span>
+                <span className='ml-1 text-sm'>Jobs for Disabled</span>
               </label>
-              <label className="block cursor-pointer">
+              <label className='block cursor-pointer'>
                 <input
-                  type="checkbox"
+                  type='checkbox'
                   checked={verifiedJobs}
-                  name="verifiedJobs"
+                  name='verifiedJobs'
                   onChange={handleCheckboxChange}
                 />
-                <span className="ml-1 text-sm">Jobs by Verified Orgs</span>
+                <span className='ml-1 text-sm'>Jobs by Verified Orgs</span>
               </label>
             </div>
             {filteredJobs.length !== jobs.length && (
-              <button className="clear-filters" onClick={clearFilters}>
+              <button className='clear-filters' onClick={clearFilters}>
                 Clear Filters
               </button>
             )}
           </div>
         </div>
-        <div className="right-card">
-          <div className="grid-card">
+        <div className='right-card'>
+          <div className='grid-card'>
             <h1>Available Jobs</h1>
-            <p className="mb-2 font-bold text-gray-800 text-sm">
+            <p className='mb-2 font-bold text-gray-800 text-sm'>
               Total Results: {filteredJobs.length}
             </p>
             {filteredJobs.length ? (
@@ -237,42 +237,44 @@ function Jobs({ user }) {
                           ? 'job women-job'
                           : 'job disabled-job'
                         : 'job'
-                    }`}>
-                    <p className="job-main">
-                      <span className="title">{job.title}</span>
+                    }`}
+                  >
+                    <p className='job-main'>
+                      <span className='title'>{job.title}</span>
                       <span> ({job.type})</span>, <span>{job.location}</span> -{' '}
                       <Link
                         to={`org/${job.company_name}`}
-                        className="uppercase text-blue-600 hover:underline">
+                        className='uppercase text-purple-800 hover:underline'
+                      >
                         {job.company_name}
                       </Link>
                     </p>
-                    <p className="text-gray-700">
-                      <span className="font-bold">Salary: </span>
+                    <p className='text-gray-700'>
+                      <span className='font-bold'>Salary: </span>
                       {job.salary} (per month)
                     </p>
-                    <p className="text-gray-700">
-                      <span className="font-bold">Vacancies: </span>
+                    <p className='text-gray-700'>
+                      <span className='font-bold'>Vacancies: </span>
                       {job.vacancies}
                     </p>
-                    <p className="job-desc sm:w-3/4">
+                    <p className='job-desc sm:w-3/4'>
                       {job.summary.length > 160
                         ? `${job.summary.substring(0, 160)}...`
                         : job.summary}
                     </p>
-                    <div className="flex justify-between sm:flex-wrap">
-                      <p className="text-blue-600 hover:underline">
+                    <div className='flex justify-between sm:flex-wrap'>
+                      <p className='text-purple-800 hover:underline'>
                         Read more...
                       </p>
-                      <p className="text-gray-700">
+                      <p className='text-gray-700'>
                         Posted on{' '}
                         {new Date(
-                          job.updated_at.slice(0, 10),
+                          job.updated_at.slice(0, 10)
                         ).toLocaleDateString()}
                       </p>
                     </div>
                     {user.role === 'Employee' && (
-                      <button className="apply-button relative sm:absolute">
+                      <button className='apply-button relative sm:absolute'>
                         Apply Now
                       </button>
                     )}
@@ -280,7 +282,7 @@ function Jobs({ user }) {
                 </Link>
               ))
             ) : (
-              <h2 className="text-center mt-2 text-2xl">No Jobs found!</h2>
+              <h2 className='text-center mt-2 text-2xl'>No Jobs found!</h2>
             )}
           </div>
         </div>

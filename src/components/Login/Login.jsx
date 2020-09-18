@@ -30,26 +30,28 @@ function Login({ setUser }) {
     setPending(false);
   };
 
-  if (localStorage.getItem('token')) return <Redirect to="/dashboard" />;
+  if (localStorage.getItem('token')) return <Redirect to='/dashboard' />;
 
   return (
-    <StyledForm width="360px">
+    <StyledForm width='360px'>
       {step === 1 && (
         <div>
           <h1>Choose your Role</h1>
-          <div className="w-full flex flex-col justify-center">
+          <div className='w-full flex flex-col justify-center'>
             <button
-              className="w-full mx-auto py-1"
+              className='w-full mx-auto py-1'
               style={{ margin: '0.35rem auto' }}
-              onClick={() => setStep(2)}>
-              <Icon style={{ display: 'inline' }} name="job-seeker" />
+              onClick={() => setStep(2)}
+            >
+              <Icon style={{ display: 'inline' }} name='job-seeker' />
               &nbsp; Login as a Job Seeker
             </button>
             <button
-              className="w-full mx-auto py-1"
+              className='w-full mx-auto py-1'
               style={{ margin: '0.35rem auto' }}
-              onClick={() => setStep(2)}>
-              <Icon style={{ display: 'inline' }} name="org" />
+              onClick={() => setStep(2)}
+            >
+              <Icon style={{ display: 'inline' }} name='org' />
               &nbsp; Login as an Organization
             </button>
           </div>
@@ -58,31 +60,32 @@ function Login({ setUser }) {
       {step === 2 && (
         <>
           <button
-            className="absolute h-8 w-8 flex justify-center items-center bg-blue-600 hover:blue-700"
+            className='absolute h-8 w-8 flex justify-center items-center bg-purple-800 hover:blue-700'
             style={{ top: 10, left: 15, borderRadius: '50%' }}
-            onClick={() => setStep(1)}>
-            <Icon name="go-back" />
+            onClick={() => setStep(1)}
+          >
+            <Icon name='go-back' />
           </button>
           <h1>Login</h1>
           <form onSubmit={handleSubmit}>
             <input
-              type="text"
-              placeholder="Username"
+              type='text'
+              placeholder='Username'
               required
               onChange={(e) => setUserName(e.target.value)}
             />
             <input
-              type="password"
-              placeholder="Password"
+              type='password'
+              placeholder='Password'
               required
               onChange={(e) => setPassword(e.target.value)}
             />
-            <button type="submit" disabled={pending}>
+            <button type='submit' disabled={pending}>
               {!pending ? 'Login' : 'Logging in...'}
             </button>
-            {error && <p className="error">{error}</p>}
+            {error && <p className='error'>{error}</p>}
             <p>
-              Don't have an account? <Link to="/signup">Sign Up!</Link>
+              Don't have an account? <Link to='/signup'>Sign Up!</Link>
             </p>
           </form>
         </>

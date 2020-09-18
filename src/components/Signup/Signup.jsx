@@ -42,7 +42,7 @@ function Signup({ setUser }) {
       setError(null);
       const data = await signUp(
         { username: userName, password, password2, email: userEmail },
-        userRole,
+        userRole
       );
       if (data.error) setError(data.error);
       else {
@@ -55,32 +55,34 @@ function Signup({ setUser }) {
     }
   };
 
-  if (localStorage.getItem('token')) return <Redirect to="/dashboard" />;
+  if (localStorage.getItem('token')) return <Redirect to='/dashboard' />;
 
   return (
-    <StyledForm width="380px">
+    <StyledForm width='380px'>
       {step === 1 && (
         <div>
           <h1>Choose your Role</h1>
-          <div className="w-full flex flex-col justify-center">
+          <div className='w-full flex flex-col justify-center'>
             <button
-              className="w-full mx-auto py-1"
+              className='w-full mx-auto py-1'
               style={{ margin: '0.35rem auto' }}
               onClick={() => {
                 setUserRole('Employee');
                 setStep(2);
-              }}>
-              <Icon style={{ display: 'inline' }} name="job-seeker" />
+              }}
+            >
+              <Icon style={{ display: 'inline' }} name='job-seeker' />
               &nbsp; Sign Up as a Job Seeker
             </button>
             <button
-              className="w-full mx-auto py-1"
+              className='w-full mx-auto py-1'
               style={{ margin: '0.35rem auto' }}
               onClick={() => {
                 setUserRole('Employer');
                 setStep(2);
-              }}>
-              <Icon style={{ display: 'inline' }} name="org" />
+              }}
+            >
+              <Icon style={{ display: 'inline' }} name='org' />
               &nbsp; Sign Up as an Organization
             </button>
           </div>
@@ -89,43 +91,44 @@ function Signup({ setUser }) {
       {step === 2 && (
         <>
           <button
-            className="absolute h-8 w-8 flex justify-center items-center bg-blue-600 hover:blue-700"
+            className='absolute h-8 w-8 flex justify-center items-center bg-purple-800 hover:blue-700'
             style={{ top: 10, left: 15, borderRadius: '50%' }}
-            onClick={() => setStep(1)}>
-            <Icon name="go-back" />
+            onClick={() => setStep(1)}
+          >
+            <Icon name='go-back' />
           </button>
           <h1>Sign Up</h1>
           <form onSubmit={handleSubmit}>
             <input
-              type="text"
-              placeholder="Username"
+              type='text'
+              placeholder='Username'
               required
               onChange={(e) => setUserName(e.target.value)}
             />
             <input
-              type="email"
-              placeholder="Email"
+              type='email'
+              placeholder='Email'
               required
               onChange={(e) => setUserEmail(e.target.value)}
             />
             <input
-              type="password"
-              placeholder="Password"
+              type='password'
+              placeholder='Password'
               required
               onChange={(e) => setPassword(e.target.value)}
             />
             <input
-              type="password"
-              placeholder="Confirm Password"
+              type='password'
+              placeholder='Confirm Password'
               required
               onChange={(e) => setPassword2(e.target.value)}
             />
-            <button type="submit" disabled={pending}>
+            <button type='submit' disabled={pending}>
               {!pending ? 'Sign Up' : 'Signing Up...'}
             </button>
-            {error && <p className="error">{error}</p>}
+            {error && <p className='error'>{error}</p>}
             <p>
-              Already have an account? <Link to="/login">Login!</Link>
+              Already have an account? <Link to='/login'>Login!</Link>
             </p>
           </form>
         </>

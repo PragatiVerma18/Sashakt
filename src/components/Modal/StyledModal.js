@@ -30,7 +30,7 @@ export const StyledModal = styled.main.attrs({
   }
 
   .heading {
-    ${tw`mb-2 uppercase tracking-wide m-auto font-bold text-center text-blue-600 text-xl sm:text-2xl`}
+    ${tw`mb-2 uppercase tracking-wide m-auto font-bold text-center text-purple-800 text-xl sm:text-2xl`}
   }
 
   .close-icon {
@@ -54,10 +54,10 @@ export const StyledModal = styled.main.attrs({
   }
 
   button {
-    ${tw`w-full my-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded transition ease-in duration-200`}
+    ${tw`w-full my-2 bg-purple-800 hover:bg-purple-900 text-white font-bold py-2 px-2 rounded transition ease-in duration-200`}
 
     &:disabled {
-      ${tw`hover:bg-blue-500 opacity-50 cursor-not-allowed`}
+      ${tw`hover:bg-purple-800 opacity-50 cursor-not-allowed`}
     }
   }
 `;

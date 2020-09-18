@@ -18,7 +18,7 @@ function RecommendedJobs({ user }) {
     allJobs = allJobs.filter(
       (j) =>
         Math.floor((new Date() - new Date(profile.dob)) / 31536000000) >=
-        parseInt(j.age_limit.match(/\d+/)[0]),
+        parseInt(j.age_limit.match(/\d+/)[0])
     );
     setJobs(allJobs);
     setLoading(false);
@@ -37,22 +37,22 @@ function RecommendedJobs({ user }) {
     fetchUserData();
   }, [fetchUserData]);
 
-  if (!localStorage.getItem('token')) return <Redirect to="/login" />;
+  if (!localStorage.getItem('token')) return <Redirect to='/login' />;
 
   if (loading)
     return (
-      <img className="loader" alt="loader" src={require('assets/loader.gif')} />
+      <img className='loader' alt='loader' src={require('assets/loader.gif')} />
     );
 
   return (
     <>
       {jobs.length ? (
-        <StyledContainer className="p-8">
-          <div className="cards-grid">
+        <StyledContainer className='p-8'>
+          <div className='cards-grid'>
             <div>
-              <div className="grid-card">
+              <div className='grid-card'>
                 <h1>Recommended Jobs</h1>
-                <p className="mb-2 font-bold text-gray-800 text-sm">
+                <p className='mb-2 font-bold text-gray-800 text-sm'>
                   Total Results: {jobs.length}
                 </p>
 
@@ -65,43 +65,45 @@ function RecommendedJobs({ user }) {
                             ? 'job women-job'
                             : 'job disabled-job'
                           : 'job'
-                      }`}>
-                      <p className="job-main">
-                        <span className="title">{job.title}</span>
+                      }`}
+                    >
+                      <p className='job-main'>
+                        <span className='title'>{job.title}</span>
                         <span> ({job.type})</span>, <span>{job.location}</span>{' '}
                         -{' '}
                         <Link
                           to={`org/${job.company_name}`}
-                          className="uppercase text-blue-600 hover:underline">
+                          className='uppercase text-purple-800 hover:underline'
+                        >
                           {job.company_name}
                         </Link>
                       </p>
-                      <p className="text-gray-700">
-                        <span className="font-bold">Salary: </span>
+                      <p className='text-gray-700'>
+                        <span className='font-bold'>Salary: </span>
                         {job.salary} (per month)
                       </p>
-                      <p className="text-gray-700">
-                        <span className="font-bold">Vacancies: </span>
+                      <p className='text-gray-700'>
+                        <span className='font-bold'>Vacancies: </span>
                         {job.vacancies}
                       </p>
-                      <p className="job-desc sm:w-3/4">
+                      <p className='job-desc sm:w-3/4'>
                         {job.summary.length > 160
                           ? `${job.summary.substring(0, 160)}...`
                           : job.summary}
                       </p>
-                      <div className="flex justify-between sm:flex-wrap">
-                        <p className="text-blue-600 hover:underline">
+                      <div className='flex justify-between sm:flex-wrap'>
+                        <p className='text-purple-800 hover:underline'>
                           Read more...
                         </p>
-                        <p className="text-gray-700">
+                        <p className='text-gray-700'>
                           Posted on{' '}
                           {new Date(
-                            job.updated_at.slice(0, 10),
+                            job.updated_at.slice(0, 10)
                           ).toLocaleDateString()}
                         </p>
                       </div>
                       {user.role === 'Employee' && (
-                        <button className="apply-button relative sm:absolute">
+                        <button className='apply-button relative sm:absolute'>
                           Apply Now
                         </button>
                       )}
@@ -113,7 +115,7 @@ function RecommendedJobs({ user }) {
           </div>
         </StyledContainer>
       ) : (
-        <h1 className="text-3xl font-bold text-center m-2 text-blue-700 m-auto">
+        <h1 className='text-3xl font-bold text-center m-2 text-purple-900 m-auto'>
           No Job recommendations found!
         </h1>
       )}

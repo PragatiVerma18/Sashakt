@@ -17,7 +17,7 @@ export const StyledContainer = styled.div.attrs({
         ${tw`shadow rounded bg-white py-4 px-6`}
       }
       .job {
-        ${tw`relative cursor-pointer border border-blue-600 px-4 py-2 text-sm mb-4 hover:shadow-md`}
+        ${tw`relative cursor-pointer border border-purple-800 px-4 py-2 text-sm mb-4 hover:shadow-md`}
         border-left-width: 6px;
         border-bottom-right-radius: 5px;
         border-top-right-radius: 5px;
@@ -48,7 +48,7 @@ export const StyledContainer = styled.div.attrs({
         height: 9rem;
       }
       .title {
-        ${tw`text-center text-lg text-blue-600 font-bold hover:underline`}
+        ${tw`text-center text-lg text-purple-800 font-bold hover:underline`}
       }
       span {
         font-weight: bold;
@@ -61,18 +61,18 @@ export const StyledContainer = styled.div.attrs({
     &.pagination {
       ${tw`flex justify-center items-center my-3`}
       span {
-        ${tw`cursor-pointer transition duration-200 ease-in-out hover:bg-blue-700 mx-2 flex justify-center items-center h-10 w-10 text-white font-bold bg-blue-500 rounded-full`}
+        ${tw`cursor-pointer transition duration-200 ease-in-out hover:bg-purple-900 mx-2 flex justify-center items-center h-10 w-10 text-white font-bold bg-purple-800 rounded-full`}
         &.current-page {
-          ${tw`bg-blue-700 hover:bg-blue-800`}
+          ${tw`bg-purple-900 hover:bg-blue-800`}
         }
       }
       button {
-        ${tw`mx-2 bg-blue-600 hover:bg-blue-800 border border-blue-600`}
+        ${tw`mx-2 bg-purple-800 hover:bg-blue-800 border border-purple-800`}
       }
     }
   }
   h1 {
-    ${tw`text-3xl font-bold text-center m-2 text-blue-700`}
+    ${tw`text-3xl font-bold text-center m-2 text-purple-900`}
   }
   a {
     &.news-item {
@@ -100,9 +100,9 @@ export const StyledContainer = styled.div.attrs({
     ${tw`focus:outline-none focus:shadow-outline m-1 border border-gray-300 rounded py-2 px-4 leading-normal border-gray-400`}
   }
   button {
-    ${tw`my-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition ease-in duration-200`}
+    ${tw`my-2 bg-purple-800 hover:bg-purple-900 text-white font-bold py-2 px-4 rounded transition ease-in duration-200`}
     &:disabled {
-      ${tw`hover:bg-blue-500 opacity-50 cursor-not-allowed`}
+      ${tw`hover:bg-purple-800 opacity-50 cursor-not-allowed`}
     }
     &.apply-button {
       @media (min-width: 640px) {
@@ -117,7 +117,7 @@ export const StyledContainer = styled.div.attrs({
       ${tw`text-xs bg-white mt-1 rounded-sm text-white px-1 py-0 text-green-600 border border-green-600`}
     }
     &.general {
-      ${tw`text-xs bg-white mt-1 rounded-sm text-white px-1 py-0 text-blue-600 border border-blue-600`}
+      ${tw`text-xs bg-white mt-1 rounded-sm text-white px-1 py-0 text-purple-800 border border-purple-800`}
     }
     &.clear-filters {
       ${tw`w-full block mt-2 py-1 text-white font-medium bg-gray-700 border border-gray-400 rounded`}
@@ -132,7 +132,7 @@ export const StyledContainer = styled.div.attrs({
     td {
       ${tw`text-center px-4 py-4`}
       a {
-        ${tw`text-blue-600 hover:underline`}
+        ${tw`text-purple-800 hover:underline`}
       }
     }
     td {
@@ -143,7 +143,7 @@ export const StyledContainer = styled.div.attrs({
           width: 94px;
         }
         &.Applied {
-          ${tw`text-blue-600 bg-blue-200`}
+          ${tw`text-purple-800 bg-blue-200`}
         }
         &.Shortlisted {
           ${tw`text-purple-600 bg-purple-200`}
@@ -164,7 +164,7 @@ export const StyledContainer = styled.div.attrs({
           ${tw`text-indigo-600 bg-indigo-200`}
         }
         &.change-status {
-          ${tw`text-xs cursor-pointer hover:underline text-blue-600`}
+          ${tw`text-xs cursor-pointer hover:underline text-purple-800`}
         }
       }
     }
