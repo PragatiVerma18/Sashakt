@@ -1,3 +1,6 @@
+
+<div align="center"> <img align="center" alt="codeinn" src="https://sashakt.netlify.app/static/media/awsar.e12625ad.png" height='150' width='350'></div>
+
 # Sashakt
 
 Sashakt is an online job portal for rural women that connects them easily with the employers looking for talented and skilled women, accompanied by a number of features to ease the process for rural women and the employers.
