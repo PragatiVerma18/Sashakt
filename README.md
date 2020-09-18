@@ -26,6 +26,80 @@ The platform is avalible with multiple language support which eleminates all the
 - **Database**: Sqllite3
 - **Hosting**: Heroku, Netlify
 
+#### Setup
+
+
+<details>
+  <summary><strong>Frontend Setup Instructions</strong></summary>
+  
+  
+- Fork and Clone the repo using
+```
+$ git clone https://github.com/PragatiVerma18/Sashakt.git
+$ cd Sashakt
+```
+
+- Get the API key from [https://api.imgbb.com/](https://api.imgbb.com/) and replace it with `REACT_APP_IMGBB_API_KEY` in `.env.example`
+
+- Get a new API key from [https://smtpjs.com/](https://smtpjs.com/) and replace it with `REACT_APP_API_KEY` in `.env.example`
+
+- Rename the file `.env.example` to `.env`
+
+- Install node dependencies
+```
+$ npm install
+```
+- Run Server at localhost using
+```
+$ npm start
+```
+
+  
+</details>
+
+
+<details>
+  <summary><strong>Backend Setup Instructions</strong></summary>
+
+- Fork and Clone the repo using
+```
+$ git clone https://github.com/PragatiVerma18/Sashakt.git
+$ cd Sashakt
+```
+- Change Branch to `backend` using 
+```
+$ git checkout backend
+```
+- Setup Virtual environment
+```
+$ python3 -m venv env
+```
+- Activate the virtual environment
+```
+$ source env/bin/activate
+```
+- Install dependencies using
+```
+$ pip install -r requirements.txt
+```
+- Make migrations using
+```
+$ python manage.py makemigrations
+```
+- Migrate Database
+```
+$ python manage.py migrate
+```
+- Create a superuser
+```
+$ python manage.py createsuperuser
+```
+- Run server using
+```
+$ python manage.py runserver
+``` 
+</details>
+
 ## Team:
 
 > Team Members
