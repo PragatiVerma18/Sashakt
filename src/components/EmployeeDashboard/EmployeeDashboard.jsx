@@ -115,8 +115,8 @@ function EmployeeDashboard({ user }) {
 
       {!jobs.length ? (
         <h1>
-          You have not applied for any Jobs yet. Visit{' '}
-          <Link to='/jobs'>Jobs</Link> to get started.
+          You have not applied for any Jobs yet. Visit <Link to='/'>Jobs</Link>{' '}
+          to get started.
         </h1>
       ) : (
         <>

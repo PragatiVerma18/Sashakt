@@ -18,14 +18,10 @@ const Navbar = ({ user, setUser }) => {
       <div className='top-nav bg-gray-300 flex justify-between items-center px-2 py-1'>
         <div className='flex items-center'>
           <img
-            className='h-10'
-            src={require('assets/govt-uk.png')}
-            alt='govt. logo'
+            src={require('assets/awsar.png')}
+            className='px-2 h-10'
+            alt='Awsar Logo'
           />
-          <p className='mx-2 text-xl font-medium'>
-            GOVERNMENT OF UTTARAKHAND
-            <span className='text-base'> - NATIONAL WEB PORTAL FOR JOBS</span>
-          </p>
         </div>
         <div className='flex m-auto sm:m-0'>
           <button className='mx-2' onClick={print} title='Print this page'>
@@ -35,16 +31,9 @@ const Navbar = ({ user, setUser }) => {
         </div>
       </div>
 
-      <header className='bg-white flex items-end justify-between'>
+      <header className='py-3 bg-white flex items-end justify-between'>
         <div className='logo flex items-end text-lg font-bold'>
-          <Link className='m-1' to='/'>
-            <img
-              src={require('assets/awsar.png')}
-              className='h-10'
-              alt='Awsar Logo'
-            />
-          </Link>
-          <Link to='/jobs' className='ml-3 text-purple-900 hover:text-blue-800'>
+          <Link to='/' className='ml-3 text-purple-900 hover:text-blue-800'>
             Jobs
           </Link>
           <Link
@@ -74,14 +63,6 @@ const Navbar = ({ user, setUser }) => {
         <nav className='text-lg'>
           <ul>
             <li>
-              <Link
-                to='/analytics'
-                className='sm:mr-3 font-bold text-purple-800 hover:text-purple-900'
-              >
-                Analytics
-              </Link>
-            </li>
-            <li>
               {user.username && user.role === 'Employer' ? (
                 <Link
                   to='/createJob'
@@ -90,14 +71,6 @@ const Navbar = ({ user, setUser }) => {
                   Post Job
                 </Link>
               ) : null}
-            </li>
-            <li>
-              <Link
-                to='/news'
-                className='sm:mr-3 font-bold text-purple-800 hover:text-purple-900'
-              >
-                News
-              </Link>
             </li>
             <li>
               {user.username ? (

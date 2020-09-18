@@ -22,7 +22,7 @@ function CreateJob({ user }) {
   const [extracting, setExtracting] = useState(false);
   const [pending, setPending] = useState(false);
   const [error, setError] = useState(null);
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(3);
   const [jobDetails, setJobDetails] = useState({
     user: '',
     title: '',
@@ -40,7 +40,7 @@ function CreateJob({ user }) {
     age_limit: '',
     qualification: 'Intermediate (10+2)',
     experience: '',
-    job_for_women: false,
+    job_for_women: true,
     job_for_disabled: false,
   });
 
@@ -118,54 +118,55 @@ function CreateJob({ user }) {
     fetchUserData();
   }, [fetchUserData]);
 
-  if (!localStorage.getItem('token')) return <Redirect to="/login" />;
+  if (!localStorage.getItem('token')) return <Redirect to='/login' />;
 
   if (user.role === 'Employee')
     return (
-      <div className="text-red-600 text-3xl font-bold m-auto">
+      <div className='text-red-600 text-3xl font-bold m-auto'>
         Please login as a Government organization to create a new Job.
       </div>
     );
 
   if (!userData || loading)
     return (
-      <img className="loader" alt="loader" src={require('assets/loader.gif')} />
+      <img className='loader' alt='loader' src={require('assets/loader.gif')} />
     );
 
   return (
-    <StyledForm className="create-job">
+    <StyledForm className='create-job'>
       {step === 1 && (
         <>
           <h1>Upload Job Document</h1>
           <form onSubmit={handleSubmit}>
-            <div className="input-group sm:w-full">
-              <p className="ml-1 text-gray-600">
+            <div className='input-group sm:w-full'>
+              <p className='ml-1 text-gray-600'>
                 Please upload the document from which job description has to be
                 read <br />
                 (format can be image or .pdf or .docx) <br /> The document will
                 be processed and you will get an editable description.
               </p>
-              <label className="file-upload" htmlFor="file-upload">
+              <label className='file-upload' htmlFor='file-upload'>
                 {`${
                   fileName !== 'Choose a Document' ? 'File: ' : ''
                 }${fileName}`}
               </label>
               <input
-                id="file-upload"
-                name="image"
-                type="file"
+                id='file-upload'
+                name='image'
+                type='file'
                 style={{ display: 'none' }}
                 onChange={handleImageChange}
               />
             </div>
-            <button type="submit" disabled={uploading}>
+            <button type='submit' disabled={uploading}>
               {!uploading ? 'Upload Document' : 'Uploading Document...'}
             </button>
-            {error && <p className="error">{error}</p>}
-            <p className="mx-1 text-gray-700">
+            {error && <p className='error'>{error}</p>}
+            <p className='mx-1 text-gray-700'>
               <span
-                className="cursor-pointer underline"
-                onClick={() => setStep(3)}>
+                className='cursor-pointer underline'
+                onClick={() => setStep(3)}
+              >
                 Click here
               </span>{' '}
               to create job by manually filling out the details
@@ -176,16 +177,16 @@ function CreateJob({ user }) {
       {step === 2 && (
         <>
           <h1>Document Uploaded</h1>
-          <p className="mx-1 flex flex-wrap text-gray-700">
-            <span className="text-black font-bold">Document Name: </span>
+          <p className='mx-1 flex flex-wrap text-gray-700'>
+            <span className='text-black font-bold'>Document Name: </span>
             &nbsp;{fileName}
           </p>
-          <form className="mt-2" onSubmit={extractData}>
-            <p className="mx-1 text-lg text-gray-700">
+          <form className='mt-2' onSubmit={extractData}>
+            <p className='mx-1 text-lg text-gray-700'>
               Please click the button below to Extract Job Description from the
               uploaded document.
             </p>
-            <button type="submit" disabled={extracting}>
+            <button type='submit' disabled={extracting}>
               {!extracting
                 ? 'Extract Job Description'
                 : 'Extracting Job Description...'}
@@ -197,183 +198,177 @@ function CreateJob({ user }) {
         <>
           <h1>Edit Job Details</h1>
           <form onSubmit={handleCreateJob}>
-            <div className="mt-1 flex flex-col sm:flex-row">
+            <div className='mt-1 flex flex-col sm:flex-row'>
               <div>
                 <label>Job Title</label>
                 <input
-                  type="text"
-                  placeholder="Eg: Civil Enginneer"
-                  name="title"
+                  type='text'
+                  placeholder='Eg: Civil Enginneer'
+                  name='title'
                   value={jobDetails.title}
                   onChange={handleJobDetailsChange}
                 />
               </div>
-              <div className="sm:ml-2">
+              <div className='sm:ml-2'>
                 <label>Job Location</label>
                 <input
-                  type="text"
-                  placeholder="Eg: Delhi"
-                  name="location"
+                  type='text'
+                  placeholder='Eg: Delhi'
+                  name='location'
                   value={jobDetails.location}
                   onChange={handleJobDetailsChange}
                 />
               </div>
             </div>
-            <div className="mt-2">
+            <div className='mt-2'>
               <div>
                 <label>Job type</label>
                 <select
-                  className="sm:w-full"
-                  name="type"
+                  className='sm:w-full'
+                  name='type'
                   onChange={(e) => handleJobDetailsChange(e)}
-                  value={jobDetails.type}>
+                  value={jobDetails.type}
+                >
                   <option>Full-Time</option>
                   <option>Part-Time</option>
                   <option>Internship</option>
                 </select>
               </div>
             </div>
-            <div className="mt-2 flex flex-col sm:flex-row">
-              <label className="cursor-pointer flex text-gray-500 font-bold">
+            <div className='mt-2 flex flex-col sm:flex-row'>
+              <label className='cursor-pointer flex text-gray-500 font-bold'>
                 <input
-                  type="checkbox"
-                  name="job_for_women"
-                  onChange={handleCheckboxChange}
-                  style={{ width: 'fit-content', cursor: 'pointer' }}
-                />
-                <span>Jobs for Women</span>
-              </label>
-              <label className="cursor-pointer flex text-gray-500 font-bold">
-                <input
-                  type="checkbox"
-                  name="job_for_disabled"
+                  type='checkbox'
+                  name='job_for_disabled'
                   onChange={handleCheckboxChange}
                   style={{ width: 'fit-content', cursor: 'pointer' }}
                 />
                 <span>Jobs for Disabled people</span>
               </label>
             </div>
-            <div className="mt-2">
+            <div className='mt-2'>
               <div>
                 <label>Job Description</label>
                 <textarea
-                  type="text"
-                  placeholder="Please Describe the job here"
-                  name="summary"
-                  className="h-24 w-full"
+                  type='text'
+                  placeholder='Please Describe the job here'
+                  name='summary'
+                  className='h-24 w-full'
                   value={jobDetails.summary}
                   onChange={handleJobDetailsChange}
                 />
               </div>
             </div>
-            <div className="mt-2 flex flex-col sm:flex-row">
+            <div className='mt-2 flex flex-col sm:flex-row'>
               <div>
                 <label>Job Category</label>
                 <input
-                  type="text"
-                  placeholder="Eg: CS"
-                  name="category"
+                  type='text'
+                  placeholder='Eg: CS'
+                  name='category'
                   value={jobDetails.category}
                   onChange={handleJobDetailsChange}
                 />
               </div>
-              <div className="sm:ml-2">
+              <div className='sm:ml-2'>
                 <label>Number of Vacancies</label>
                 <input
-                  type="number"
-                  placeholder="Eg: 10"
-                  name="vacancies"
+                  type='number'
+                  placeholder='Eg: 10'
+                  name='vacancies'
                   value={jobDetails.vacancies}
                   onChange={handleJobDetailsChange}
                 />
               </div>
             </div>
-            <div className="mt-2 flex flex-col sm:flex-row">
+            <div className='mt-2 flex flex-col sm:flex-row'>
               <div>
                 <label>Website</label>
                 <input
-                  type="text"
-                  placeholder="Eg: https://abc.com"
-                  name="website"
+                  type='text'
+                  placeholder='Eg: https://abc.com'
+                  name='website'
                   value={jobDetails.website}
                   onChange={handleJobDetailsChange}
                 />
               </div>
-              <div className="sm:ml-2">
+              <div className='sm:ml-2'>
                 <label>Age Limit</label>
                 <input
-                  type="text"
-                  placeholder="Eg: age >18"
-                  name="age_limit"
+                  type='text'
+                  placeholder='Eg: age >18'
+                  name='age_limit'
                   value={jobDetails.age_limit}
                   onChange={handleJobDetailsChange}
                 />
               </div>
             </div>
-            <div className="mt-2 flex flex-col sm:flex-row">
+            <div className='mt-2 flex flex-col sm:flex-row'>
               <div>
                 <label>Min. Qualification</label>
                 <select
-                  name="qualification"
+                  name='qualification'
                   value={jobDetails.qualification}
                   onChange={handleJobDetailsChange}
-                  className="qual">
+                  className='qual'
+                >
                   {getQualifications().map((q) => (
                     <option key={q}>{q}</option>
                   ))}
                 </select>
               </div>
-              <div className="sm:ml-2">
+              <div className='sm:ml-2'>
                 <label>Min. Experience</label>
                 <input
-                  type="number"
-                  placeholder="Eg: 2"
-                  name="experience"
+                  type='number'
+                  placeholder='Eg: 2'
+                  name='experience'
                   value={jobDetails.experience}
                   onChange={handleJobDetailsChange}
                 />
               </div>
             </div>
-            <div className="mt-2 flex flex-col sm:flex-row">
+            <div className='mt-2 flex flex-col sm:flex-row'>
               <div>
                 <label>Salary</label>
                 <input
-                  type="number"
-                  placeholder="Eg: 100000"
-                  name="salary"
+                  type='number'
+                  placeholder='Eg: 100000'
+                  name='salary'
                   value={jobDetails.salary}
                   onChange={handleJobDetailsChange}
                 />
               </div>
-              <div className="sm:ml-2">
+              <div className='sm:ml-2'>
                 <label>Last date to apply</label>
                 <input
-                  type="datetime-local"
-                  name="last_date"
+                  type='datetime-local'
+                  name='last_date'
                   value={jobDetails.last_date}
                   onChange={handleJobDetailsChange}
-                  className="last_date"
+                  className='last_date'
                 />
               </div>
             </div>
-            <div className="mt-2">
+            <div className='mt-2'>
               <div>
                 <label>Tags</label>
                 <select
-                  className="sm:w-full"
-                  name="tags"
+                  className='sm:w-full'
+                  name='tags'
                   onChange={handleJobDetailsChange}
-                  value={jobDetails.tags}>
+                  value={jobDetails.tags}
+                >
                   {getDomains().map((d) => (
                     <option key={d}>{d}</option>
                   ))}
                 </select>
               </div>
             </div>
-            <button className="mt-1" type="submit" disabled={pending}>
+            <button className='mt-1' type='submit' disabled={pending}>
               {!pending ? 'Create Job' : 'Creating Job...'}
             </button>
-            {error && <p className="error">{error}</p>}
+            {error && <p className='error'>{error}</p>}
           </form>
         </>
       )}

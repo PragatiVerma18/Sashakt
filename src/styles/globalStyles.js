@@ -10,7 +10,6 @@ export const GlobalStyles = createGlobalStyle`
     top: 0 !important;
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
-    transition: all 0.50s linear;
     font-family: proximaNova, sans-serif;
   }
   body.modal-open {

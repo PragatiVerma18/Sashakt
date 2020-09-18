@@ -11,20 +11,9 @@ const Footer = () => {
       <div className='main-footer'>
         <div className='my-2'>
           <div className='flex mb-1'>
-            <Link to='/'>
-              <img
-                src={require('assets/govt-uk.png')}
-                className='awsar-logo'
-                alt='uttarakhand government logo'
-              />
-            </Link>
-            <Link to='/'>
-              <img
-                src={require('assets/emblem.svg')}
-                alt='website-logo'
-                className='footer-logo'
-              />
-            </Link>
+            <p className='text-white text-center font-bold text-xl'>
+              Connect with us
+            </p>
           </div>
           <div className='flex'>
             <Link to='/'>
@@ -41,18 +30,16 @@ const Footer = () => {
           </div>
         </div>
         <div className='footer-links'>
-          <Link to='/'>Find Organization</Link>
-          <Link to='/analytics'>Job Analytics</Link>
+          <Link to='/'>Find Jobs</Link>
           <Link to='/createJob'>Post Job</Link>
-          <Link to='/news'>News</Link>
         </div>
       </div>
       <div className='copyright-bar bg-purple-800'>
-        <h6 className='text-sm'>@2020 Team Hashtag. All Rights Reserved.</h6>
+        <h6 className='text-sm'>@2020 Team Alpha. All Rights Reserved.</h6>
         <div>
           <Link to='/'>Contact us</Link>
           <Link to='/'>Provide feedback</Link>
-          <Link to='/jobs'>Jobs</Link>
+          <Link to='/'>Jobs</Link>
         </div>
       </div>
     </div>
