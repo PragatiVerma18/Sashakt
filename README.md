@@ -111,3 +111,19 @@ $ python manage.py runserver
 | 3. | Shristi Singh | UI Designer/Frontend Developer | [@shristisingh29](https://github.com/shristisingh29)  |
 | 4. | Nihal Pandey | Project documentation and Backend | [@stark019](https://github.com/stark019) |
 
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody><tr>
+    <td align="center"><a href="https://rajat2502.github.io/portfolio/"><img alt="" src="https://avatars2.githubusercontent.com/u/42200276?v=4" width="100px;"><br><sub><b>Rajat Verma</b></sub></a><br><a href="https://github.com/PragatiVerma18/Sashakt/commits?author=rajat2502" title="Code">💻</a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/PragatiVerma18/"><img alt="" src="https://avatars2.githubusercontent.com/u/42115530?v=4" width="100px;"><br><sub><b>Pragati Verma</b></sub></a><br><a href="https://github.com/PragatiVerma18/Sashakt/commits?author=PragatiVerma18" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/shristisingh29"><img alt="" src="https://avatars1.githubusercontent.com/u/44435610?v=4" width="100px;"><br><sub><b>Shristi Singh</b></sub></a><br><a href="#design-shristisingh29" title="Design">🎨</a></td>
+        <td align="center"><a href="https://github.com/stark019"><img alt="" src="https://avatars2.githubusercontent.com/u/46189913?s=460&u=8dc90bd6845b9c91f75f51674ce9804c12cabe9b&v=4" width="100px;"><br><sub><b>Nihal Pandey</b></sub></a><br><a href="https://github.com/PragatiVerma18/Sashakt/commits?author=stark019" title="Code">💻</a></td>
+  </tr>
+</tbody></table>
+
