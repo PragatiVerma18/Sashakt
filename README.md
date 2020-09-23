@@ -1,5 +1,5 @@
 
-<div align="center"> <img align="center" alt="codeinn" src="https://sashakt.netlify.app/static/media/awsar.e12625ad.png" height='150' width='350'></div>
+<div align="center"> <img align="center" alt="sashakt" src="https://sashakt.netlify.app/static/media/awsar.e12625ad.png" height='150' width='350'></div>
 
 # Sashakt
 
@@ -8,6 +8,12 @@ Sashakt is an online job portal for rural women that connects them easily with t
 The platform is available with multiple language support which eleminates all the entry barriers for rural women seeking for jobs.
 
 > See the hosted website [Here](https://sashakt.netlify.app/)
+
+## Demo Video:
+<a href="https://www.youtube.com/watch?v=2DG5oM-qdXk" target="_blank" rel="noopener">
+  <img src="https://user-images.githubusercontent.com/42115530/93972332-b2321a00-fd8f-11ea-96eb-fd871e4dfbb5.png" alt="Sashakt: Job Portal for women"
+	title="Sashakt" width="500px" />
+</a>
 
 ## Key Features:
 - Professional profiles for the users as well as organisations.
@@ -32,6 +38,7 @@ The platform is available with multiple language support which eleminates all th
 - **Frontend**: [https://sashakt.netlify.app/](https://sashakt.netlify.app/)
 - **Backend**: [https://sashakt.herokuapp.com/](https://sashakt.herokuapp.com/)
 - **PPT**: [http://bit.ly/sashakt2020](http://bit.ly/sashakt2020)
+- **YouTube Video**: [https://youtu.be/2DG5oM-qdXk](https://youtu.be/2DG5oM-qdXk)
 
 ## Setup
 
@@ -117,6 +124,11 @@ $ python manage.py runserver
 | 2. | Rajat Verma | Frontend Developer| [@rajat2502](https://github.com/rajat2502)  |
 | 3. | Shristi Singh | UI Designer/Frontend Developer | [@shristisingh29](https://github.com/shristisingh29)  |
 | 4. | Nihal Pandey | Project documentation and Backend | [@stark019](https://github.com/stark019) |
+
+## GirlScript India Summit 2020
+> Team Alpha was selected as the 2nd runner-up in GirlScript India Summit 2020 Hackathon
+
+[![GirlScript India Summit](https://girlscriptsummit.com/images/summitlogolg.png)](https://girlscriptsummit.com/hackathon/)
 
 ## Contributors ✨
 
